@@ -11,6 +11,9 @@ npm i styled-components
 ```
 npm i @types/styled-components -D
 ```
+
+Para reconhecer o CSS entre ``, é necessário instalar a extensão no VS Code **vscode-styled-components**
+
 ## Instalando Phosphor para icones
  
 ```
