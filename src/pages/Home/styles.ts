@@ -16,44 +16,8 @@ export const HomeContainer = styled.main`
     }
 `;
 
-export const FormContainer = styled.div`
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    color: ${(props) => props.theme['gray-100']};
-    font-size: 0.93rem;
-    font-weight: bold;
-    flex-wrap: wrap;
-`;
 
-export const CountDownContainer = styled.div`
-    font-size: 10rem;
-    line-height: 10rem;
-    color: ${(props) => props.theme['gray-100']};
-
-    display: flex;
-    gap: 1rem;
-
-    span{
-        background: ${(props) => props.theme['gray-700']};
-        padding: 2rem 1rem;
-        border-radius: 8px;
-    }
-`;
-
-export const SeparatorContainer = styled.div`
-    padding: 2rem 0;
-    color: ${(props) => props.theme['green-500']};
-
-    width: 4rem;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-`; 
-
-export const StartCountdownButton = styled.button`
+export const BaseCountdownButton = styled.button`
     width: 100%;
     height: 3rem;
     border: 0;
@@ -69,13 +33,6 @@ export const StartCountdownButton = styled.button`
 
     cursor: pointer;
 
-    background: ${props => props.theme['green-500']};
-    color: ${props => props.theme['gray-100']};
-
-    &:not(:disabled):hover {
-        background: ${props => props.theme['green-700']};
-    }
-
     &:disabled {
         opacity: 0.7;
         cursor: not-allowed;
@@ -83,34 +40,23 @@ export const StartCountdownButton = styled.button`
     
 `;
 
-const baseInput = styled.input`
-    background: transparent;
-    height: 2.5rem;
-    border: 0;
-    border-bottom: 2px solid ${(props) => props.theme['gray-500']};
-    font-weight: bold;
-    font-size: 0.93rem;
-    padding: 0 0.5rem;
-    color: ${(props) => props.theme['gray-100']};
+export const StartCountdownButton = styled(BaseCountdownButton)`
+    background: ${props => props.theme['green-500']};
+    color: ${props => props.theme['gray-100']};
 
-    &::placeholder {
-        color: ${(props) => props.theme['gray-500']};
+    &:not(:disabled):hover {
+        background: ${props => props.theme['green-700']};
     }
 
-    &:focus {
-        box-shadow: none;
-        border-color: ${(props) => props.theme['green-500']};
-    }
 `;
 
-export const TaskInput = styled(baseInput)`
-    flex: 1;
+export const StopCountDownButton = styled(BaseCountdownButton)`
+    background: ${props => props.theme['red-500']};
+    color: ${props => props.theme['gray-100']};
 
-    &::-webkit-calendar-picker-indicator { /* flecha que aparece quando utilizamos a tag datalist */
-        display: none !important;
+    &:not(:disabled):hover {
+        background: ${props => props.theme['red-700']};
     }
 `;
 
-export const MinutesAmountInput = styled(baseInput)`
-    width: 3rem;
-`;
+
