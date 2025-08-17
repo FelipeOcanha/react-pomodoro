@@ -19,3 +19,9 @@ Para reconhecer o CSS entre ``, é necessário instalar a extensão no VS Code *
 ```
 npm i phosphor-react
 ```
+
+## Instalando o immer
+
+```
+npm i immer
+```
